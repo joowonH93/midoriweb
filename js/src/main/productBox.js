@@ -12,6 +12,13 @@
 
   var myH = winH/5*4;
 
+  var mStyle = $('#mStyle');
+  var tabBox = mStyle.children('.tab_box');
+  var tabMenu = tabBox.children('.category');
+  var selMenu = tabMenu.children('li');
+  var tabCon = tabBox.children('.tab_content');
+  var selCon = tabCon.children('ul');
+
 
   if(winW >= 769){
     win.on('scroll', function(){
@@ -24,6 +31,17 @@
       }
     });
   };
+
+  selMenu.on('click', function(e){
+    e.preventDefault();
+    var i = $(this).index();
+
+    selMenu.eq(i).addClass('select');
+    selMenu.eq(i).siblings().removeClass('select');
+
+    selCon.eq(i).stop().fadeIn(800).addClass('select');
+    selCon.eq(i).siblings().stop().fadeOut(800).removeClass('select');
+  });
 
   win.on('resize', function(e){
     var nowW = win.outerWidth();
