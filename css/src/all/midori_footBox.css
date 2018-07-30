@@ -1,0 +1,16 @@
+/* midori_footBox.css */
+
+
+
+/*common area*/
+#footBox {
+  width:100%; height:150px;
+  background-color:#006544;
+}
+
+#footBox > p {
+  width:100%; height:100%;
+  color:#fff; font-size:10px; text-align:center;
+  font-family:'Noto Sans KR', sans-serif;
+  font-weight:lighter; line-height:150px;
+}

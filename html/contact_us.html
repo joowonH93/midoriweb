@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- contact_us.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.5" />
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="../fontawesome5/css/all.css" />
+
+  <!-- font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kopubbatang.css" />
+
+  <link rel="stylesheet" href="../css/base/reset.css" />
+  <link rel="stylesheet" href="../css/src/sub_contact/contact_us.css" />
+
+  <!-- [if lte IE9] >
+    <script src="../ie/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../ie/pie/PIE_IE9.js"></script>
+  < ![endif] -->
+  
+  <link rel="apple-touch-icon" href="../favicon.gif">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+
+  <title>Midori</title>
+</head>
+
+<body>
+  <!-- design -->
+  <div id="wrap">
+    <header id="headBox"></header><!-- #headBox -->
+    
+    <article id="contentBox">
+      <div class="center">
+        <h3>costomer center</h3>
+        <p class="part_title">고객센터 안내</p>
+
+        <p class="body_text">
+          <span class="p_01">070 - 7790 - 0498</span><br />
+          <span class="p_02">AM 10:30 ~ PM 18:00</span><br />
+          <span class="p_03">(점심시간 PM 12:00 ~ 13:00)</span><br />
+          <span class="p_04">토요일, 일요일, 공휴일, 휴무</span>
+        </p>
+      </div><!-- .center -->
+
+      <div class="site_link">
+        <h3>관련 사이트</h3>
+        <div class="btn_box">
+          <ul class="box_01 clearfix">
+            <li class="btn_faq">
+              <button type="button" onclick="window.open('http://www.omise.co.kr/board/board.html?code=ytinter_board3')">faq</button>
+            </li>
+            <li class="btn_b2b">
+              <button type="button" onclick="window.open('http://www.omise.co.kr/board/board.html?code=ytinter_board2')">b2b</button>
+            </li>
+            <li class="btn_qna">
+              <button type="button" onclick="window.open('http://www.omise.co.kr/board/board.html?code=ytinter')">q&a</button>
+            </li>
+          </ul>
+          <ul class="box_02 clearfix">
+            <li class="btn_tnote">
+              <button type="button" onclick="window.open('http://www.travelersnote.co.kr/')">TRAVELER'S notebook</button>
+            </li>
+            <li class="btn_md">
+              <button type="button" onclick="window.open('http://www.midori-yti.co.kr/md/')">md paper products</button>
+            </li>
+            <li class="btn_cafe">
+              <button type="button" onclick="window.open('https://cafe.naver.com/travelersnote.cafe')">naver cafe</button>
+            </li>
+            <li class="btn_omise">
+              <button type="button" onclick="window.open('http://www.omise.co.kr/')">shopping - 오미세</button>
+            </li>
+          </ul>
+        </div><!-- .btn_box -->
+
+        <!-- <button type="button" onclick="location.href='joinUs.jsp' ">회원가입</button> -->
+
+      </div><!-- .site_link -->
+
+      <address id="companyInfo">
+        <h3 class="hidden">회사 주소 및 정보, 기타 연락처</h3>
+        <p class="info_kr">
+          <span>(주)와이티인터내셔널</span><br />
+          서울시 송파구 충민로 66 ( 가든파이브 리빙관) L-5058<br />
+          <span class="bold">TEL</span> 02 - 2157 - 0272<br />
+          <span class="bold">FAX</span> 02 - 2157 - 0273<br />
+          <span class="bold">E-MAIL</span> young - trade@daum.net
+        </p>
+      
+        <p class="info_en">
+          <span>YT INTERNATIONAL CO., LTD</span><br />
+          #L-5058 Garden5 Life, Munjeong 2-dong, Songpa-gu, Seoul, Korea<br />
+          <span class="bold">TEL</span> 02 - 2157 - 0272<br />
+          <span class="bold">FAX</span> 02 - 2157 - 0273<br />
+          <span class="bold">E-MAIL</span> young - trade@daum.net
+        </p>
+         
+        <p class="info_etc">
+          <span>대표이사 신승준</span><br />
+          <span class="bold">사업자 등록번호</span> 140 - 81 - 28926<br />
+          <span class="bold">통신판매업 신고번호</span> 제 2012 - 서울 송파 - 0330호
+        </p>
+      </address><!-- #companyInfo -->
+    </article><!-- #contentBox -->
+
+    <div id="topBtn"></div><!-- #topBtn -->
+    <footer id="footBox"></footer><!-- #footBox -->
+
+  </div>
+
+
+
+  <!-- javascript -->
+  <script src="../js/base/jquery-3.3.1.min.js"></script>
+  <script src="../js/base/jquery-ui.min.js"></script>
+
+  <script>
+
+    (function($){
+
+      var headBox = $('#headBox');
+      headBox.load("./common/headBox.html");
+
+      var topBtn = $('#topBtn');
+      topBtn.load("./common/topBtn.html");
+
+      var footBox = $('#footBox');
+      footBox.load("./common/footBox.html");
+
+    })(jQuery);
+
+  </script>
+
+</body>
+</html>

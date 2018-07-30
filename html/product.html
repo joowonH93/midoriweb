@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!-- product.html -->
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=0.5" />
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="../fontawesome5/css/all.css" />
+
+  <!-- font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kopubbatang.css" />
+
+  <link rel="stylesheet" href="../css/base/reset.css" />
+  <link rel="stylesheet" href="../css/src/sub_product/product.css" />
+
+  <!-- [if lte IE9] >
+    <script src="../ie/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="../ie/pie/PIE_IE9.js"></script>
+  < ![endif] -->
+  
+  <link rel="apple-touch-icon" href="../favicon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../favicon.png">
+
+  <title>Midori</title>
+</head>
+
+<body>
+  <!-- design -->
+  <div id="wrap">
+    <header id="headBox"></header><!-- #headBox -->
+    <article id="videoBox"></article><!-- #videoBox -->
+    <article id="productBox"></article><!-- #productBox -->
+
+    <article id="mStyle">
+      <h2><span>midori</span> style</h2>
+      <div class="tab_box">
+        <ul class="category clearfix">
+          <li><a href="#">아이디어 문구</a></li>
+          <li><a href="#">디자인 문구</a></li>
+          <li><a href="#">노트 & 다이어리</a></li>
+          <li><a href="#">paper item</a></li>
+        </ul><!-- .category -->
+
+        <div class="tab_content">
+          <ul class="tab01 clearfix">
+            <li>
+              <a href="#"></a>
+              <dl>
+                <dt>origami origami</dt>
+                <dd>자르고, 감아보고, 붙여보고, 포장해보는 두근두근 즐거운 일상</dd>
+              </dl>
+            </li>
+            <li>
+              <a href="#"></a>
+              <dl>
+                <dt>5 pocket clear folder</dt>
+                <dd>5가지 디자인 파일폴더</dd>
+              </dl>
+            </li>
+            <li>
+              <a href="#"></a>
+              <dl>
+                <dt>embosser</dt>
+                <dd>내 책상 위의 스페셜리스트</dd>
+              </dl>
+            </li>
+            <li>
+              <a href="#"></a>
+              <dl>
+                <dt>mini cleaner</dt>
+                <dd>책상 위의 작은 청소부</dd>
+              </dl>
+            </li>
+            <li>
+              <a href="#"></a>
+              <dl>
+                <dt>single sheet cutter</dt>
+                <dd>자유롭게 움직이는 편리한 커터</dd>
+              </dl>
+            </li>
+            <li>
+              <a href="#"></a>
+              <dl>
+                <dt>cl new color</dt>
+                <dd>휴대하기에 좋은 크기와 다양한 색상,
+유용한 구성</dd>
+              </dl>
+            </li>
+          </ul><!-- .tab01 -->
+        </div><!-- .tab_conten -->
+        
+      </div><!-- .tab_box -->
+    </article><!-- #mStyle -->
+
+    <div id="topBtn"></div><!-- #topBtn -->
+    <footer id="footBox"></footer><!-- #footBox -->
+
+  </div><!-- #wrap -->
+
+
+
+  <!-- javascript -->
+  <script src="../js/base/jquery-3.3.1.min.js"></script>
+  <script src="../js/base/jquery-ui.min.js"></script>
+
+  <script>
+
+    (function($){
+
+      var headBox = $('#headBox');
+      headBox.load("./common/headBox.html");
+
+      var productBox = $('#productBox');
+      productBox.load("./main/productBox.html");
+
+      var topBtn = $('#topBtn');
+      topBtn.load("./common/topBtn.html");
+
+      var footBox = $('#footBox');
+      footBox.load("./common/footBox.html");
+
+    })(jQuery);
+
+  </script>
+
+</body>
+</html>

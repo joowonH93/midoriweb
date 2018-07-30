@@ -1,0 +1,43 @@
+<!-- videoBox.html -->
+
+<h2><span class="hidden">메인 비디오 재생 화면</span></h2>
+<div class="text_box">
+  <p><span class="hidden">영상을 감상하실 수 있습니다.</span></p>
+  <button type="button" class="play_btn"><span>play movie</span></button>
+</div><!-- .text_box -->
+
+<div class="scroll">
+  <a href="#productBox">
+    <span class="hidden">스크롤 내려서 상품보기</span>
+  </a>
+</div><!-- .scroll -->
+
+<div id="fullVideo">
+  <video loop="loop" autoplay="autoplay" muted="muted">
+    <source src="../media/video/md_paper_image_movie_short.mp4" type="video/mp4" />
+    <p>
+      사용하고 계신 브라우저는 비디오 지원이 되지 않습니다. 크롬권장<br />
+      <a href="http://google.com/chrome">권장 브라우저 받으러 가기</a>
+    </p>
+  </video>
+
+  <div class="banner_wrap">
+    <ul class="indicator hidden_wrap">
+      <li><span>md paper products movie image 01</span></li>
+      <li><span>md paper products movie image 02</span></li>
+      <li><span>md paper products movie image 03</span></li>
+      <li><span>md paper products movie image 04</span></li>
+      <li><span>md paper products movie image 05</span></li>
+    </ul><!-- .indicator -->
+
+    <ul class="video_banner hidden_wrap">
+      <li class="banner_img_01"><span>md paper products movie image</span></li>
+      <li class="banner_img_02"><span>md paper products movie image</span></li>
+      <li class="banner_img_03"><span>md paper products movie image</span></li>
+      <li class="banner_img_04"><span>md paper products movie image</span></li>
+      <li class="banner_img_05"><span>md paper products movie image</span></li>
+    </ul><!-- .video_banner -->
+  </div><!-- .banner_wrap -->
+</div><!-- #fullVideo -->
+
+<script src="../js/src/main/videoBox.js"></script>

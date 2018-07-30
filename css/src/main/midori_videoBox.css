@@ -1,0 +1,177 @@
+/* midori_videoBox.css */
+
+
+
+/*common area*/
+#videoBox {
+  position:relative;
+  width:100%; height:100%;
+  overflow:hidden;
+}
+
+#videoBox > .text_box {
+  margin-top:-62.5px; margin-left:-125px;
+  position:absolute; top:50%; left:50%; z-index:100;
+  width:250px; height:125px;
+}
+
+#videoBox > .text_box > p {
+  width:100%; height:50px;
+  background-image:url("../../../img/videoBox/video_text.png");
+  background-repeat:no-repeat;
+  background-size:238px;
+  background-position:center 0;
+}
+
+#videoBox > .text_box > .play_btn {
+  margin-left:25px;
+  box-sizing:border-box; border:1px solid #333;
+  width:200px; height:75px;
+  font-size:25px; text-align:center; text-transform:capitalize;
+  background-color:rgba(255,255,255,0.5);
+  transition:all 300ms ease;
+}
+
+#videoBox > .text_box > .play_btn:hover {
+  background-color:#006544; color:#fff;
+}
+
+#videoBox > .text_box > .play_btn:focus {
+  border:3px solid #333;
+  text-decoration:underline;
+}
+
+#videoBox > .scroll {
+  margin-left:-40px;
+  position:absolute; left:50%; bottom:50px; z-index:100;
+  width:80px; height:40px;
+}
+
+#videoBox > .scroll > a {
+  display:block; width:100%; height:100%;
+  background-image:url("../../../img/videoBox/scroll_btn.png");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  animation:scroll 1000ms infinite ease alternate;
+}
+
+#videoBox > .scroll:hover > a {
+  background-image:url("../../../img/videoBox/scroll_btn_hover.png");
+}
+
+@keyframes scroll {
+  0% {transform:translateY(0);}
+  /*50% {transform:translateY(5px);}*/
+  100% {transform:translateY(20px);}
+}
+
+#fullVideo {
+  width:100%; height:100%;
+}
+
+#fullVideo > video {
+  display:none;
+  width:auto; height:auto; min-width:101%; min-height:101%;
+  position:absolute; top:50%; left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  backface-visibility:visible;
+}
+
+#fullVideo > .banner_wrap {
+  display:none;
+  position:relative;
+  width:100%; height:100%;
+}
+
+#fullVideo > .banner_wrap > .video_banner {
+  width:600%; height:100%;
+}
+
+#fullVideo > .banner_wrap > .video_banner > li {
+  float:left;
+  width:calc(100% / 6); height:100%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+#fullVideo > .banner_wrap > .video_banner > li.banner_img_01 {
+  background-image: url("../../../img/videoBox/banner_img/banner_img_01.png");
+}
+#fullVideo > .banner_wrap > .video_banner > li.banner_img_02 {
+  background-image: url("../../../img/videoBox/banner_img/banner_img_02.png");
+}
+#fullVideo > .banner_wrap > .video_banner > li.banner_img_03 {
+  background-image: url("../../../img/videoBox/banner_img/banner_img_03.png");
+}
+#fullVideo > .banner_wrap > .video_banner > li.banner_img_04 {
+  background-image: url("../../../img/videoBox/banner_img/banner_img_04.png");
+}
+#fullVideo > .banner_wrap > .video_banner > li.banner_img_05 {
+  background-image: url("../../../img/videoBox/banner_img/banner_img_05.png");
+}
+
+#fullVideo > .banner_wrap > .indicator {
+  position:absolute; top:50%; margin-top:-50px; right:35px;
+  width:12px; height:auto;
+}
+
+#fullVideo > .banner_wrap > .indicator > li {
+  width:100%; height:12px; margin-bottom:10px;
+  background-color:rgba(255,255,255,0.4);
+  border-radius:100%;
+  cursor:pointer;
+}
+#fullVideo > .banner_wrap > .indicator > li:last-child {margin-bottom:0;}
+
+#fullVideo > .banner_wrap > .indicator > li:hover {
+  background-color:rgba(255,255,255,0.9);
+}
+
+#fullVideo > .banner_wrap > .indicator > li.active {
+  background-color:rgba(255,255,255,0.9);
+}
+
+
+
+
+
+
+
+
+
+
+/*mobile*/
+@media screen and (max-width:480px) {
+  #fullVideo > .banner_wrap {
+    display:block;
+  }
+}
+
+
+
+/*tablet*/
+@media screen and (min-width:481px) and (max-width:768px) {
+  #fullVideo > .banner_wrap {
+    display:block;
+  }
+}
+
+
+
+/*laptop*/
+@media screen and (min-width:769px) and (max-width:1366px) {
+  #fullVideo > video {
+    display:block;
+  }
+}
+
+
+
+/*pc-full*/
+@media screen and (min-width:1367px) {
+  #fullVideo > video {
+    display:block;
+  }
+}

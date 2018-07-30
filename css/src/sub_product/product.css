@@ -1,0 +1,98 @@
+@import url('./../common/midori_headBox.css');
+@import url('./../main/midori_productBox.css');
+@import url('./product_midori.css');
+@import url('./../common/midori_footBox.css');
+
+
+
+/* product.css */
+
+/*
+  (포인트색) #006544
+  (기본 서체 컬러) color:#333;
+  (기본 서체) font-family: 'Noto Sans KR', sans-serif;
+*/
+
+
+
+/*common area*/
+#wrap {
+  width:100%; height:auto;
+  /*
+  background-image:url("../../../img/wrap/grid.png");
+  background-repeat:repeat;
+  background-size:59px 60px;
+  */
+}
+
+.sub_title {
+  position:absolute; top:60px; right:120px;
+  width:auto; height:auto;
+  font-size:20px; color:#006544; text-transform:uppercase;
+  font-weight:300;
+  transition:all 300ms ease;
+}
+
+#topBtn {
+  position:fixed; right:50px; bottom:50px;
+  width:50px; height:50px;
+  /*transition:all 300ms ease;*/
+}
+
+#topBtn > button {
+  width:100%; height:100%;
+  background-image:url("../../../img/wrap/top_btn.png");
+  background-repeat:no-repeat;
+  background-size:100%;
+  background-position:center;
+}
+
+#topBtn > button:hover {
+  background-image:url("../../../img/wrap/top_btn_hover.png");
+  transition:all 300ms ease;
+}
+
+#topBtn > button:focus {
+  background-image:url("../../../img/wrap/top_btn_focus.png");
+}
+
+
+
+/*mobile*/
+@media screen and (max-width:480px) {
+  .sub_title {
+    top:80px; right:35px;
+    font-size:16px;
+  }
+
+  #topBtn {
+   right:35px; bottom:35px;
+   width:35px; height:35px;}
+}
+
+
+
+/*tablet*/
+@media screen and (min-width:481px) and (max-width:768px) {
+  .sub_title {
+    top:42px; right:90px;
+    font-size:18px;
+  }
+
+  #topBtn {
+   right:35px; bottom:35px;
+   width:40px; height:40px;}
+}
+
+
+
+/*laptop*/
+@media screen and (min-width:769px) and (max-width:1366px) {
+  .sub_title {
+    top:42px; right:90px;
+    font-size:18px;
+  }
+
+  #topBtn {
+   width:45px; height:45px;}
+}
