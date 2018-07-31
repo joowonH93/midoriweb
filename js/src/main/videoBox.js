@@ -9,6 +9,13 @@
   var scrollBtn = videoBox.children('.scroll');
   var fullVideo = $('#fullVideo');
 
+  var playBtn = $('.text_box').children('.play_btn');
+  var modalCon = fullVideo.children('.modal_frame');
+  var modalBg = fullVideo.children('.modal_bg');
+
+  modalCon.hide();
+  modalBg.hide();
+
   var banWrap = $('.banner_wrap');
   var videoBan = banWrap.children('.video_banner');
   var videoBanLi = videoBan.children('li');
@@ -60,6 +67,12 @@
   // 2. 모바일, 태블릿 화면에서 비디오 대신 이미지 배너 나오게 하기
   if(winW <= 768){
 
+    playBtn.on('click', function(e){
+      e.preventDefault();
+     // playBtn.attr('onclick', "window.open('https://youtu.be/GmgUZHCdC3k')");
+     window.open('https://youtu.be/GmgUZHCdC3k');
+    });
+
     moveBan(i);
   
     indiLi.on('click', function(){
@@ -77,10 +90,26 @@
     // var stopSlide = function(){ clearInterval( autoStart ); };
 
     startSlide();
+  };
 
-  } else {
-    // $('.banner_wrap').hide();
+  // 3. laptop 이상 부터 모달 윈도우를 띄워 유튜브 영상 제공
+  if(winW > 768){
+    playBtn.on('click', function(e){
+      e.preventDefault();
 
+      modalCon.fadeIn();
+      modalBg.fadeIn(function(){
+         $('video')[0].pause();
+         // $('video')[0].get[0].play(); 
+      });
+
+      modalBg.on('click', function(){
+        modalCon.fadeOut();
+        modalBg.fadeOut(function(){
+           $('video')[0].play();
+        });
+      });
+    });
   };
 
 })(jQuery);
