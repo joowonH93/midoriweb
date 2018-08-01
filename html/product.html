@@ -31,21 +31,19 @@
   <!-- design -->
   <div id="wrap">
     <header id="headBox"></header><!-- #headBox -->
-    <article id="videoBox"></article><!-- #videoBox -->
-    <article id="productBox"></article><!-- #productBox -->
-
-    <article id="mStyle">
-      <h2><span>midori</span> style</h2>
-      <div class="tab_box">
-        <ul class="category clearfix">
-          <li class="select"><a href="#">아이디어 문구</a></li>
-          <li><a href="#">디자인 문구</a></li>
-          <li><a href="#">노트 & 다이어리</a></li>
-          <li><a href="#">paper item</a></li>
-        </ul><!-- .category -->
-
-        <div class="tab_content">
-          <ul class="tab01 clearfix select">
+    <div class="pro_all_wrap">
+      <article id="productBox"></article><!-- #productBox -->
+      <article id="mStyle">
+        <h2><span>midori</span> style</h2>
+        <div class="tab_box">
+          <ul class="category clearfix">
+            <li class="select"><a href="#">아이디어 문구</a></li>
+            <li><a href="#">디자인 문구</a></li>
+            <li><a href="#">노트 & 다이어리</a></li>
+            <li><a href="#">paper item</a></li>
+          </ul><!-- .category -->
+          <div class="tab_content">
+            <ul class="tab01 clearfix select">
             <li>
               <a href="#"></a>
               <dl>
@@ -89,7 +87,7 @@
               </dl>
             </li>
           </ul><!-- .tab01 -->
-          <ul class="tab02 clearfix">
+            <ul class="tab02 clearfix">
             <li>
               <a href="#"></a>
               <dl>
@@ -133,7 +131,7 @@
               </dl>
             </li>
           </ul><!-- .tab02 -->
-          <ul class="tab03 clearfix">
+            <ul class="tab03 clearfix">
             <li>
               <a href="#"></a>
               <dl>
@@ -177,7 +175,7 @@
               </dl>
             </li>
           </ul><!-- .tab03 -->
-          <ul class="tab04 clearfix">
+            <ul class="tab04 clearfix">
             <li>
               <a href="#"></a>
               <dl>
@@ -207,9 +205,10 @@
               </dl>
             </li>
           </ul><!-- .tab04 -->
-        </div><!-- .tab_content -->
-      </div><!-- .tab_box -->
-    </article><!-- #mStyle -->
+          </div><!-- .tab_content -->
+        </div><!-- .tab_box -->
+      </article><!-- #mStyle -->
+    </div><!-- .pro_all_wrap -->
 
     <div id="topBtn"></div><!-- #topBtn -->
     <footer id="footBox"></footer><!-- #footBox -->
@@ -233,7 +232,6 @@
       productBox.load("./main/productBox.html", function(){
         var proBox = $('#productBox');
         var proLi = proBox.find('li');
-
         proLi.addClass('landing');
       });
 

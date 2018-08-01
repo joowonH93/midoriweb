@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- midori_web.html -->
+<!-- shop_info.html -->
 <html lang="ko-KR">
 <head>
   <meta charset="UTF-8" />
@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kopubbatang.css" />
 
   <link rel="stylesheet" href="../css/base/reset.css" />
-  <link rel="stylesheet" href="../css/src/midori_web.css" />
+  <link rel="stylesheet" href="../css/src/sub_shop/shop_info.css" />
 
   <!-- [if lte IE9] >
     <script src="../ie/html5shiv/dist/html5shiv.min.js"></script>
@@ -31,26 +31,38 @@
   <!-- design -->
   <div id="wrap">
     <header id="headBox"></header><!-- #headBox -->
-    <article id="videoBox"></article><!-- #videoBox -->
-    <article id="productBox"></article><!-- #productBox -->
     <section id="shopInfoBox">
       <h2><span class="hidden">shop info 쇼핑 정보</span></h2>
       <div class="shop_info_wrap">
         <div class="online_shop"></div><!-- .online_shop -->
+        <ul class="on_shop_list hidden_wrap clearfix">
+          <li><a target="_blank" href="http://www.omise.co.kr/"><span>가든파이브 미도리</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2LGZhEK"><span>텐 바이 텐</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2Awgony"><span>핫트랙스</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2OxrVFW"><span>반디 앤 루니스</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2E3mEUm"><span>영풍문고</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2MaT68d"><span>비젠</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2LPe1k6"><span>펜 앤 아트</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2vpWCnM"><span>8 1 7 워크샵</span></a></li>
+          <li><a target="_blank" href="http://www.dtracks.co.kr/"><span>디트랙스</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2M9rTmi"><span>모어 댄 레스</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2LHvpYU"><span>더블유 디 에이치</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2v59LTR"><span>리베흐테</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2utgo1f"><span>퀸마마 마켓</span></a></li>
+          <li><a target="_blank" href="http://mary-brown.com/index.html"><span>메리 브라운</span></a></li>
+          <li><a target="_blank" href="https://bit.ly/2KfSsnN"><span>오데옹</span></a></li>
+        </ul><!-- .on_shop_list -->
         <div class="offline_shop"></div><!-- .offline_shop -->
       </div><!-- .shop_info_wrap -->
     </section><!-- #shopInfoBox -->
     <div id="topBtn"></div><!-- #topBtn -->
     <footer id="footBox"></footer><!-- #footBox -->
-
   </div><!-- #wrap -->
-
-
 
   <!-- javascript -->
   <script src="../js/base/jquery-3.3.1.min.js"></script>
   <script src="../js/base/jquery-ui.min.js"></script>
-
+  
   <script>
 
     (function($){
@@ -58,17 +70,10 @@
       var headBox = $('#headBox');
       headBox.load("./common/headBox.html");
 
-      var videoBox = $('#videoBox');
-      videoBox.load("./main/videoBox.html");
-
-      var productBox = $('#productBox');
-      productBox.load("./main/productBox.html", function(){
-        var proBox = $('#productBox');
-        proBox.css({backgroundImage:'url("../../../img/wrap/grid.png")'});
-      });
-
       var onShop = $('.online_shop')
-      onShop.load("./main/online_shop.html");
+      onShop.load("./main/online_shop.html", function(){
+        onShop.css({marginBottom:'50px'});
+      });
 
       var offShop = $('.offline_shop');
       offShop.load("./main/offline_shop.html");

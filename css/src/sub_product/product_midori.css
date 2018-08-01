@@ -3,12 +3,16 @@
 
 
 /*common area*/
-#mStyle {
-  box-sizing:border-box; padding:120px 35px;
+.pro_all_wrap {
   width:100%; height:auto;
   background-image:url("../../../img/wrap/grid.png");
   background-repeat:repeat;
   background-size:59px 60px;
+}
+
+#mStyle {
+  box-sizing:border-box; padding:120px 35px; padding-top:0;
+  width:100%; height:auto;
 }
 
 #mStyle > h2 {
@@ -275,7 +279,7 @@
 /*pc*/
 @media screen and (min-width:769px) and (max-width:1366px) {
   #mStyle {
-    padding:150px 50px;
+    padding:150px 50px; padding-top:0;
   }
 
   #mStyle > .tab_box {
@@ -307,7 +311,7 @@
 /*pc-full*/
 @media screen and (min-width:1366px) {
   #mStyle {
-    padding:150px 50px;
+    padding:150px 50px; padding-top:0;
   }
 
   #mStyle > .tab_box > .tab_content > ul > li:nth-child(3n) {
