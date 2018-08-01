@@ -68,7 +68,9 @@
     (function($){
 
       var headBox = $('#headBox');
-      headBox.load("./common/headBox.html");
+      headBox.load("./common/headBox.html", function(){
+        headBox.find('.sub_title').text('shop info');
+      });
 
       var onShop = $('.online_shop')
       onShop.load("./main/online_shop.html", function(){

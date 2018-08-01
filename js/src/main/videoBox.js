@@ -46,7 +46,7 @@
       videoBan.animate({marginLeft:num}, function(){
         $(this).css({marginLeft:0});
       });
-    };
+    }
 
     indiLi.eq(i).addClass('active');
     indiLi.eq(i).siblings('li').removeClass('active');
@@ -90,7 +90,7 @@
     // var stopSlide = function(){ clearInterval( autoStart ); };
 
     startSlide();
-  };
+  }
 
   // 3. laptop 이상 부터 모달 윈도우를 띄워 유튜브 영상 제공
   if(winW > 768){
@@ -110,6 +110,6 @@
         });
       });
     });
-  };
+  }
 
 })(jQuery);

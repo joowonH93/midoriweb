@@ -3,7 +3,7 @@
 (function($){
 
   var win = $(window);
-  var winW = win.outerWidth();
+  // var winW = win.outerWidth();
   var gnbBtn = $('.gnb_btn');
   var gnb = $('.gnb_wrap');
 

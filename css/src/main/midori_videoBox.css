@@ -76,6 +76,11 @@
   position:absolute; top:50%; left:50%;
   transform:translateX(-50%) translateY(-50%);
   backface-visibility:visible;
+
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-image: url("../../../img/videoBox/banner_img/banner_img_01.png");
 }
 
 #fullVideo > .banner_wrap {

@@ -226,7 +226,9 @@
     (function($){
 
       var headBox = $('#headBox');
-      headBox.load("./common/headBox.html");
+      headBox.load("./common/headBox.html", function(){
+        headBox.find('.sub_title').text('product');
+      });
 
       var productBox = $('#productBox');
       productBox.load("./main/productBox.html", function(){

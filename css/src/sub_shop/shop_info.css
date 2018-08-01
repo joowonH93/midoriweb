@@ -20,11 +20,13 @@
 /*common area*/
 #wrap {
   width:100%; height:auto;
-  /*
   background-image:url("../../../img/wrap/grid.png");
   background-repeat:repeat;
   background-size:59px 60px;
-  */
+}
+
+.shop_info_wrap {
+  width:100%; height:auto;
 }
 
 .sub_title {

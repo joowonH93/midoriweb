@@ -44,13 +44,13 @@
       videoBan.animate({marginLeft:num}, function(){
         $(this).css({marginLeft:0});
       });
-    };
+    }
 
     indiLi.eq(i).addClass('active');
     indiLi.eq(i).siblings('li').removeClass('active');
   };
 
-  var productBox = $('#productBox');
+  // var productBox = $('#productBox');
 
   var topBtn = $('#topBtn');
 
@@ -147,6 +147,6 @@
 
   } else {
     $('.banner_wrap').hide();
-  };
+  }
 
 })(jQuery);

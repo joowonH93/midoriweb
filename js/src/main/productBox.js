@@ -30,7 +30,7 @@
         proLi.removeClass('landing');
       }
     });
-  };
+  }
 
   selMenu.on('click', function(e){
     e.preventDefault();

@@ -121,7 +121,9 @@
     (function($){
 
       var headBox = $('#headBox');
-      headBox.load("./common/headBox.html");
+      headBox.load("./common/headBox.html", function(){
+        headBox.find('.sub_title').text('contact us');
+      });
 
       var topBtn = $('#topBtn');
       topBtn.load("./common/topBtn.html");
