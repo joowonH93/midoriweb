@@ -45,18 +45,44 @@
   });
 
 
+
   // 2. 스크롤 내리면 h1과 language 가리기
+  // win.on('scroll', function(){
+  //   var thisTop = $(this).scrollTop();
+
+  //   if(thisTop > 100){
+  //     logo.stop().fadeOut(150);
+  //     lang.stop().fadeOut(150);
+  //   } else {
+  //     logo.stop().fadeIn(150);
+  //     lang.stop().fadeIn(150);
+  //   }
+  // });
+
+
+  // 2-1. 참고하기
+  // https://bit.ly/2O3PsNF
+  // 링크줄여주는 사이트 -> https://bitly.com/
+
+  var lastScrollTop = 0,
+      delta = 15;
+
   win.on('scroll', function(e){
     var thisTop = $(this).scrollTop();
 
-    if(thisTop > 100){
+    if (Math.abs(lastScrollTop - thisTop) <= delta) return;
+
+    if ((thisTop > lastScrollTop) && (lastScrollTop > 0)){
       logo.stop().fadeOut(150);
       lang.stop().fadeOut(150);
     } else {
       logo.stop().fadeIn(150);
       lang.stop().fadeIn(150);
     }
+
+    lastScrollTop = thisTop;
   });
+
 
   // 3. 작은 메뉴 클릭하면 해당 영역을 보여줌
   s_ms.on('click', function(e){
@@ -65,13 +91,6 @@
 
     MovePosition(_this, 50);
   });
-
-  // s_ms.on('click', function(e){
-  //   e.preventDefault();
-  //   _this = $(this);
-
-  //   MovePosition(_this, 50);
-  // });
 
   s_on.on('click', function(e){
     e.preventDefault();
@@ -100,5 +119,7 @@
 
     MovePosition(_this, 50);
   });
+
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 })(jQuery);
