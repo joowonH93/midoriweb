@@ -112,4 +112,17 @@
     });
   }
 
+  win.on('scroll', function(){
+
+    var videoH = videoBox.height();
+    var winTop = win.scrollTop();
+
+    if ((videoH - 150) < winTop){
+      $('video')[0].pause();
+    } else {
+      $('video')[0].play();
+    }
+
+  });
+
 })(jQuery);

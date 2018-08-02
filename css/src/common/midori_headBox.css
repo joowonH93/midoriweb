@@ -153,10 +153,15 @@
 
 #gnb > .global_menu > li > ul > li > a {
   margin:auto;
-  display:block; width:auto; height:100%;
+  display:none; width:auto; height:100%;
   font-size:16px; text-transform:uppercase;
   font-weight:300; text-align:center;
   position:relative;
+  transition:all 500ms ease;
+}
+
+#gnb > .global_menu > li:hover > ul > li > a {
+  display:block;
 }
   
 #gnb > .global_menu > li:hover > a {
