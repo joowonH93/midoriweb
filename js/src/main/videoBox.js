@@ -60,7 +60,7 @@
     var thisLink = $(this).children('a').attr('href');
     var thisOffset = $(thisLink).offset().top;
 
-    $('html, body').animate({scrollTop:thisOffset}, 1200, 'easeInOutBack');
+    $('html, body').stop().animate({scrollTop:thisOffset}, 1200, 'easeInOutBack');
   });
 
 
