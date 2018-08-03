@@ -1,5 +1,8 @@
 /* midori_headBox.css */
 
+/* gnb버튼 모양
+   http://rwdb.kr/css_effect_10/ */
+
 
 
 /*common area*/
@@ -14,6 +17,13 @@
   width:100%; height:0;
   transition:300ms all ease;
 }
+
+/*#headBox > .head_wrap:before {
+  content:" "; display:block;
+  width:320px; height:120px;
+  background-color:#fff;
+  border-radius:0 0 50px 0;
+}*/
 
 #headBox > .head_wrap > h1 {
   position:absolute; top:35px; left:35px;
@@ -98,7 +108,9 @@
   transition:all 300ms ease;
 }
 
-#headBox > .head_wrap > .gnb_btn > button.active > .icon {background-color:transparent;}
+#headBox > .head_wrap > .gnb_btn > button.active > .icon {
+  position:absolute; top:0;
+  background-color:transparent;}
 
 #headBox > .head_wrap > .gnb_btn > button.active > .icon:before {
   position:absolute; top:19px; right:-6px;
@@ -109,6 +121,11 @@
   position:absolute; top:19px; right:-6px;
   width:130%; height:2px; transform:rotate(45deg);
   background-color:#333;}
+
+#headBox > .head_wrap > .gnb_btn:hover > button.active > .icon {
+  position:absolute; top:0;
+  transform-origin:50% 50%; transform:rotateX(0) rotateY(360deg);
+}
 
 #headBox > .head_wrap > .gnb_wrap {
   width:100%; height:100vh;}
@@ -153,17 +170,18 @@
 
 #gnb > .global_menu > li > ul > li > a {
   margin:auto;
-  display:none; width:auto; height:100%;
+  display:block; width:auto; height:100%;
   font-size:16px; text-transform:uppercase;
   font-weight:300; text-align:center;
   position:relative;
   transition:all 500ms ease;
 }
 
-#gnb > .global_menu > li:hover > ul > li > a {
+/*#gnb > .global_menu > li:hover > ul > li > a,
+#gnb > .global_menu > li:focus > ul > li > a {
   display:block;
-}
-  
+}*/
+
 #gnb > .global_menu > li:hover > a {
   font-weight:bold; color:#006544;
   transition:all 500ms ease;
@@ -211,6 +229,10 @@
     width:7.291666vw;/*35/480*100*/ min-width:30px;
   }
 
+  #gnb > .global_menu {
+    width:186px;
+  }
+
   #gnb > .global_menu > li {
     margin-bottom:25px;
   }
@@ -232,6 +254,10 @@
 @media screen and (min-width:481px) and (max-width:768px) {
   #headBox > .head_wrap > .gnb_btn {
     top:35px; right:35px;
+  }
+
+  #gnb > .global_menu {
+    width:186px;
   }
 }
 

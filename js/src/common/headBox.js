@@ -3,10 +3,10 @@
 (function($){
 
   var win = $(window);
+  var winW = win.outerWidth();
   
   var gnbBtn = $('.gnb_btn');
   var gnb = $('.gnb_wrap');
-
 
   var bigPro = $('.gnb_01');
   var s_ms = bigPro.find('.m_s');
@@ -28,6 +28,13 @@
 
   var logo = $('h1');
   var lang = $('#language');
+
+  var bigM = $('#gnb').find('.big_menu');
+  var bigMenuA = bigM.children('a');
+  var bigLast = bigM.eq(-1).find('a');
+
+
+
 
 
   // 1. gnb 보이고 사라지게 하기
@@ -75,51 +82,108 @@
     if ((thisTop > lastScrollTop) && (lastScrollTop > 0)){
       logo.stop().fadeOut(150);
       lang.stop().fadeOut(150);
+      // headBg.stop().fadeOut(150);
     } else {
       logo.stop().fadeIn(150);
       lang.stop().fadeIn(150);
+      // headBg.stop().fadeIn(150);
     }
 
     lastScrollTop = thisTop;
   });
 
 
-  // 3. 작은 메뉴 클릭하면 해당 영역을 보여줌
-  s_ms.on('click', function(e){
-    e.preventDefault();
-    _this = $(this);
+// $('head').append('<style></style>');
+// $('style').text('#headBox > .head_wrap:before {\
+//                  content:" "; display:block;\
+//                  width:100%; height:150px;\
+//                  background-color:rgba(255,255,255,0.5);\
+//                  opacity:0;}');
 
-    MovePosition(_this, 50);
-  });
 
-  s_on.on('click', function(e){
-    e.preventDefault();
-    _this = $(this);
+  // 3. 작은 메뉴 클릭하면 해당 영역을 스크롤해서 보여줌
 
-    MovePosition(_this, 50);
-  });
+  // s_ms.on('click', function(e){
+  //   e.preventDefault();
+  //   _this = $(this);
 
-  s_off.on('click', function(e){
-    e.preventDefault();
-    _this = $(this);
+  //   MovePosition(_this, 50);
+  // });
 
-    MovePosition(_this, 50);
-  });
+  // s_on.on('click', function(e){
+  //   e.preventDefault();
+  //   _this = $(this);
 
-  s_bm.on('click', function(e){
-    e.preventDefault();
-    _this = $(this);
+  //   MovePosition(_this, 50);
+  // });.mysite.com" onClick="javascript.function(
 
-    MovePosition(_this, 0);
-  });
+  // s_off.on('click', function(e){
+  //   e.preventDefault();
+  //   _this = $(this);
 
-  s_im.on('click', function(e){
-    e.preventDefault();
-    _this = $(this);
+  //   MovePosition(_this, 50);
+  // });
 
-    MovePosition(_this, 50);
-  });
+  // s_bm.on('click', function(e){
+  //   e.preventDefault();
+  //   _this = $(this);
+
+  //   MovePosition(_this, 0);
+  // });
+
+  // s_im.on('click', function(e){
+  //   e.preventDefault();
+  //   _this = $(this);
+
+  //   MovePosition(_this, 50);
+  // });
 
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+  // 4. gnb메뉴 mouseenter와 focus
+
+  // gnb메뉴의 하위메뉴를 숨기고,
+  // 하위메뉴 영역에 대한 이벤트를 지정
+
+  if(winW > 768){
+
+    var bigM = $('#gnb').find('.big_menu');
+    var bigMenuA = bigM.children('a');
+    var bigLast = bigM.eq(-1).find('a');
+
+    bigM.children('ul').children('li').hide();
+
+    var GnbHide = function(){
+      gnb.stop().fadeOut();
+      gnbBtn.children('button').removeClass('active');
+    };
+
+    bigMenuA.on('mouseenter focus', function(){
+      _this = $(this);
+      _this.next('ul').children('li').stop().slideDown();
+    });
+
+    bigM.on('mouseleave', function(){
+      _this = $(this);
+      _this.children('ul').children('li').stop().slideUp();
+    });
+
+    $.each(bigMenuA, function(index, value){
+      _this = $(this);
+      _this.next('ul').children('li').children('a').eq(-1).on('blur', function(){
+        _this.next('ul').children('li').stop().slideUp();
+      });
+    });
+
+    bigLast.on('blur', function(){
+      GnbHide();
+    });
+  }
+
+
+
+
 
 })(jQuery);

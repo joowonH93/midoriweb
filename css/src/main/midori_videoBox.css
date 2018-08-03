@@ -23,7 +23,7 @@
   background-position:center 0;
 }
 
-#videoBox > .text_box > .play_btn {
+/*#videoBox > .text_box > .play_btn {
   margin-left:25px;
   box-sizing:border-box; border:1px solid #333;
   width:200px; height:75px;
@@ -39,7 +39,32 @@
 #videoBox > .text_box > .play_btn:focus {
   border:3px solid #333;
   text-decoration:underline;
+}*/
+
+#videoBox > .text_box > .play_btn {
+  margin-left:25px;
+  box-sizing:border-box; border:1px solid #333;
+  width:200px; height:75px;
+  font-size:25px; text-align:center; text-transform:capitalize;
+  background-color:rgba(255,255,255,0.5);
+  box-shadow:0px 5px 10px -8px rgba(0,0,0,0.5);
+  transition:all 350ms ease-in-out;
 }
+
+#videoBox > .text_box > .play_btn:hover {
+  border:0;
+  box-shadow:0px 15px 15px -8px rgba(0,0,0,0.5);
+  transform:translateY(-10px);
+  background-color:#006544; color:#fff;
+}
+
+#videoBox > .text_box > .play_btn:focus {
+  border:3px solid #333;
+  text-decoration:underline;
+}
+
+
+
 
 #videoBox > .scroll {
   margin-left:-40px;
