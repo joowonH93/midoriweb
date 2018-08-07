@@ -19,38 +19,18 @@
   var banWrap = $('.banner_wrap');
   var videoBan = banWrap.children('.video_banner');
   var videoBanLi = videoBan.children('li');
-  var liClone = videoBanLi.eq(0).clone();
-
-  videoBan.append(liClone);
+  var vdBanLeng = videoBanLi.length-1;
 
   videoBan = banWrap.children('.video_banner');
   videoBanLi = videoBan.children('li');
 
-  var banLeng = videoBanLi.length;
-  videoBan.css({width:banLeng * 100 + '%'});
-
   var indi = fullVideo.find('.indicator');
   var indiLi = indi.children('li');
 
-  var i = 0;
+  var j = 0;
 
-  var moveBan = function(i){
-    indiLi.eq(i).addClass('active');
-    indiLi.eq(i).siblings('li').removeClass('active');
 
-    var num = i * -100 + '%';
-    if ( i < banLeng-1 ){
-      videoBan.animate({marginLeft:num});
-    } else {
-      i = 0;
-      videoBan.animate({marginLeft:num}, function(){
-        $(this).css({marginLeft:0});
-      });
-    }
 
-    indiLi.eq(i).addClass('active');
-    indiLi.eq(i).siblings('li').removeClass('active');
-  };
 
 
   // 1. scroll 버튼 클릭시 product 영역이 보임
@@ -64,33 +44,57 @@
   });
 
 
+
   // 2. 모바일, 태블릿 화면에서 비디오 대신 이미지 배너 나오게 하기
   if(winW <= 768){
 
     playBtn.on('click', function(e){
       e.preventDefault();
-     // playBtn.attr('onclick', "window.open('https://youtu.be/GmgUZHCdC3k')");
-     window.open('https://youtu.be/GmgUZHCdC3k');
+      window.open('https://youtu.be/GmgUZHCdC3k');
     });
 
-    moveBan(i);
-  
-    indiLi.on('click', function(){
-      i = $(this).index();
-      moveBan(i);
-    });
+    var ReZindex = function(){
+      var i = 0;
+      for(; i <= vdBanLeng; i += 1){
+        var j = i * 10;
+        videoBanLi.eq(vdBanLeng - i).css({zIndex:j});
+      }
+    };
+    ReZindex();
 
-    var timed = 3000;
+
+    var IndiActive = function(j){
+      indiLi.eq(j).addClass('active');
+      indiLi.eq(j).siblings().removeClass('active');
+
+      videoBanLi.eq(j).fadeIn();
+      videoBanLi.eq(j).nextAll().fadeIn();
+      videoBanLi.eq(j).prevAll().fadeOut();
+    };
+    IndiActive(j);
+
+
+    var timed = 2500;
     var autoStart;
 
     var startSlide = function(){
-      autoStart  =  setInterval(function(){
-                    ( i < banLeng-1 ) ? i += 1 : i = 1;
-                    moveBan(i);  },  timed); };
-    // var stopSlide = function(){ clearInterval( autoStart ); };
+      autoStart = setInterval(function(){
+        ( j >= vdBanLeng ) ? j = 0 : j += 1;
+                  IndiActive(j);  },
+      timed);};
 
-    startSlide();
+    startSlide(j);
+
+
+    indiLi.on('click', function(e){
+      e.preventDefault();
+      j = $(this).index();
+
+      IndiActive(j);
+    });
   }
+
+
 
   // 3. laptop 이상 부터 모달 윈도우를 띄워 유튜브 영상 제공
   if(winW > 768){
@@ -129,6 +133,9 @@
     });
   }
 
+
+
+  // 4. 일정 영역으로 스크롤 내려오면 영상 정지
   win.on('scroll', function(){
 
     var videoH = videoBox.height();
@@ -141,5 +148,7 @@
     }
 
   });
+
+
 
 })(jQuery);
