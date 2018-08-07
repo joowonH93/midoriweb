@@ -102,6 +102,23 @@
          $('video')[0].pause();
          // $('video')[0].get[0].play(); 
       });
+      // modalCon.wrap('<div class="video-wrap">');
+
+      $(window).on('keyup', function(e){
+        var key = e.key.toLowerCase();
+        // console.log(key);
+        switch(key){
+          case 'escape':
+          case 'tab':
+            modalCon.fadeOut();
+            modalBg.fadeOut(function(){
+              $('video')[0].play();
+            });
+          break;
+        }
+
+      });
+
 
       modalBg.on('click', function(){
         modalCon.fadeOut();

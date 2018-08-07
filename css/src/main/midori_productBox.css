@@ -27,6 +27,11 @@
   width:100%; height:100%;
 }
 
+#productBox > .product_wrap > li > a:focus {
+  box-sizing:border-box;
+  border-image-width:3px;
+}
+
 #productBox > .product_wrap > li:nth-child(1) {
   background-image:url("../../../img/productBox/product_img_01.jpg");}
 #productBox > .product_wrap > li:nth-child(2) {

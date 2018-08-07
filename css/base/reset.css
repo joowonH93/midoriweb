@@ -68,4 +68,10 @@ main, header, nav, article, section, footer, aside, figure, figcaption {display:
 
 /* 접근성 */
 a:focus, button:focus, input:focus, select:focus, textarea:focus {
-  outline:2px solid #fa0; position:relative; z-index:1000;}
+  position:relative; z-index:5000;
+  outline:0;
+  border-style:solid;
+  border-image: linear-gradient(to right, #a6c0fe 0%, #f68084 100%);
+  border-image-slice:1;
+  border-image-width:0 0 3px 0;
+}

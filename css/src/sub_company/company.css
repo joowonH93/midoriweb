@@ -59,7 +59,7 @@
 /*mobile*/
 @media screen and (max-width:480px) {
   .sub_title {
-    top:80px; right:35px;
+    top:50px; right:15px;
     font-size:16px;
   }
 
@@ -73,7 +73,7 @@
 /*tablet*/
 @media screen and (min-width:481px) and (max-width:768px) {
   .sub_title {
-    top:42px; right:90px;
+    top:30px; right:70px;
     font-size:18px;
   }
 

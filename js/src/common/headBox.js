@@ -2,6 +2,8 @@
 
 (function($){
 
+
+
   var win = $(window);
   var winW = win.outerWidth();
   
@@ -49,6 +51,14 @@
   gnbBtn.on('click', function(e){
     gnb.stop().fadeToggle();
     $(this).children('button').toggleClass('active');
+    // console.log(ck);
+    $('#wrap').on('click', function(){
+     var ck = $(this).children('button').hasClass('active');
+        if(ck){
+          gnb.stop().fadeOut();
+          gnbBtn.children('button').removeClass('active');
+        }
+      });
   });
 
 
@@ -149,10 +159,6 @@
 
   if(winW > 768){
 
-    var bigM = $('#gnb').find('.big_menu');
-    var bigMenuA = bigM.children('a');
-    var bigLast = bigM.eq(-1).find('a');
-
     bigM.children('ul').children('li').hide();
 
     var GnbHide = function(){
@@ -184,6 +190,12 @@
 
 
 
+  // 5. gnb 배경 클릭시 비활성화
+  gnb.on('click', function(){
+    gnb.stop().fadeOut();
+    gnbBtn.children('button').removeClass('active');
+  });
 
+  
 
 })(jQuery);
